@@ -1,0 +1,68 @@
+# ===== Virtual environments =====
+.venv/
+.venv2/
+venv/
+venv_new/
+env/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# ===== Secrets =====
+.env
+.env.*
+*.key
+hf_token*
+
+# ===== Dataset (VinDr-CXR, jangan disebar ulang) =====
+vindr/
+*.dicom
+*.dcm
+png_cache/
+png_cache_pre/
+# split parquet VinDr ikut di-ignore; hapus baris ini kalau memang boleh dibagikan
+vindr-cxr/
+
+# ===== Model weights & checkpoints =====
+*.pt
+*.pth
+*.bin
+*.ckpt
+*.safetensors
+**/checkpoint-*/
+output*/**/lora_adapter/
+
+# ===== Hasil training (output) =====
+# Folder output di-ignore, kecuali file hasil evaluasi yang kecil
+output*/*
+!output*/all_results.json
+!output*/train_results.json
+!output*/test_results.csv
+!output*/samples*.png
+output-indo-pre/
+
+# ===== Log & file sementara =====
+log_*.txt
+before.txt
+after.txt
+wandb/
+runs/
+*.log
+
+# File kosong sisa salah ketik perintah (mis. pip install x>=258)
+/258
+/262
+/4
+/None
+
+# ===== Cache HuggingFace / OS / editor =====
+huggingface_cache/
+.cache/
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
